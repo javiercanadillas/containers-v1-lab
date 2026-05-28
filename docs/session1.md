@@ -219,6 +219,7 @@ gcloud artifacts repositories create $REPO_NAME --location=$REGION --repository-
 ```
 
 And finally, build the image. Instead of using the `docker build` command, that does a local build, you're going to use a Cloud Service called [Google Cloud Build]() that's going to upload your code
+```
 docker build -t "$REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/flask-demo:latest" .
 #gcloud auth configure-docker $REGION-docker.pkg.dev
 docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/flask-demo:latest
